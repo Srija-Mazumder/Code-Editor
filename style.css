@@ -1,0 +1,442 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    color: rgb(1, 2, 14);
+    background-color: rgb(222, 241, 199);
+    overflow-x: hidden;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+/* Header Styling */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(75, 155, 10, 1);
+    padding: 0 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    z-index: 1000;
+}
+
+header.dark-mode {
+    background-color: rgba(50, 50, 50, 1);
+}
+
+.logo p {
+    font-size: 31px;
+    color: #e3e9ec;
+    font-family: 'Playwrite AR', cursive;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul li {
+    display: inline;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav ul li a:hover {
+    color: #1db954;
+    cursor: pointer;
+}
+
+body.dark-mode .nav ul li a {
+    color: #f0f0f0;
+}
+
+.menu-icon {
+    font-size: 1.8em;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.theme-toggle i {
+    font-size: 1.8em;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+body.dark-mode .theme-toggle i {
+    color: #1db954;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: -2vw;
+        background-color: rgba(0, 0, 0, 0.9); /* Make the dropdown more opaque for readability */
+        width: 30vw;
+        max-width: 300px;
+        padding: 2vw;
+        text-align: center;
+    }
+
+    .nav ul.active {
+        display: flex;
+    }
+
+    .nav ul li {
+        width: 100%; /* Ensure each menu item takes full width */
+    }
+
+    .nav ul li a {
+        display: block;
+        padding: 3px; /* Increase padding for better visibility */
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-icon {
+        display: none; /* Hide the hamburger menu on larger screens */
+    }
+}
+
+/* Section Styling */
+#home {
+    position: relative;
+}
+
+.container h1 {
+    font-size: 6vh;
+    font-weight: 700;
+    text-align: left;
+    background-color: rgb(9, 87, 35);
+    margin-bottom: 8vh;
+    padding: .7rem;
+    color: #fff;
+    font-family: 'Lora', serif;
+}
+
+.editor {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.left, .right {
+    height: 40vh;
+    width: 50%;
+}
+
+.left label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:36vw;
+    font-size: 3vh;
+    font-weight: 300;
+}
+
+.left button {
+    margin-left: auto;
+    font-size: 2vh;
+    padding: .2rem;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+label i {
+    padding-right: 1vw;
+}
+
+#HTML-CODE, #CSS-CODE, #JS-CODE {
+    width: 80%;
+    height: 100%;
+    background-color: #111;
+    padding: .6rem;
+    font-size: 3vh;   
+}
+
+#JS-CODE {
+    margin-bottom: 2rem;
+}
+
+iframe {
+    width: 90%;
+    height: 52.7rem;
+    background-color: white;
+    font-size: 3vh;
+    color: #111;
+}
+
+/* About Section */
+#about {
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+    padding: 3rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 110vh; /* Add margin to separate sections */
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: rgba(75, 155, 10, 1);
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #1d1d1d;
+}
+
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode footer {
+    background-color: #111;
+    color: #fff;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.footer-logo p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.footer-links a {
+    color: #1db954;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: rgba(75, 155, 10, 1);
+}
+
+.footer-socials a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+    color: #1db954;
+}
+
+.footer-bottom {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+/* Account Section Styling */
+#account {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears on top */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+}
+
+#account .form-container {
+    background-color: #fff;
+    color: #000;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px; /* Set a more compact width */
+    max-height: 90vh; /* Limit maximum height */
+    overflow-y: auto; /* Scroll if content exceeds available height */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#account h2 {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+    color: #333;
+    text-align: center;
+    font-weight: 600;
+}
+
+#account form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.input-group input {
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: #28a745;
+    color: white;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #218838;
+}
+
+.toggle-form {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.toggle-form a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.toggle-form a:hover {
+    text-decoration: underline;
+}
+
+/* Social Login Buttons Styling */
+.social-login {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-login button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex: 1 1 calc(100% / 3 - 1rem); /* Ensure buttons wrap and fit within the container */
+    text-align: center;
+}
+
+.social-login button:hover {
+    background-color: #1db954;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo p,
+    .footer-links a,
+    .footer-socials a {
+        margin: 0.5rem 0;
+    }
+}

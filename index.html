@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srija's Code Editor</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Add smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        .favicon-img {
+            width: 50px;  /* Set your desired width */
+            height: 10px; /* Set your desired height */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <p>Srija's</p>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#" id="create-account-link">Account</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class='bx bx-moon'></i>
+            </div>
+            <i class="fa fa-bars menu-icon" aria-hidden="true"></i>
+        </nav>
+    </header>
+    
+    <!-- Home Section -->
+    <section id="home" class="container">
+        <h1>Code Editor &#128512;</h1>
+        <div class="editor">
+            <div class="left">
+                <label><i class='bx bxl-html5'></i> HTML <button> Save </button></label>
+                <textarea id="HTML-CODE" spellcheck="true" onkeyup="run()"></textarea>
+
+                <label><i class='bx bxl-css3'></i> CSS <button> Save </button></label>
+                <textarea id="CSS-CODE" spellcheck="true" onkeyup="run()"></textarea>
+
+                <label><i class='bx bxl-javascript'></i> JAVASCRIPT  <button> Save </button></label>
+                <textarea id="JS-CODE" spellcheck="true" onkeyup="run()"></textarea>
+            </div>
+            <div class="right">
+                <label><i class='bx bx-play'></i> OUTPUT</label>
+                <iframe id="op" frameborder="80"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Srija's Code Editor</h2>
+        <p>This is an online code editor that allows you to write, compile, and save your code snippets for future access. You can work with HTML, CSS, and JavaScript in real-time.</p>
+    </section>
+
+    <!-- Account Section (Login / Sign Up) -->
+    <section id="account" class="hidden">
+        <div class="form-container">
+            <span id="close-btn">&times;</span>
+            <h2>Register</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="first_name">First name</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+                <div class="input-group">
+                    <label for="last_name">Last name</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="submit-button">Register</button>
+                </div>
+            </form>
+            
+            <p class="toggle-form">Have an account? <a href="#" id="sign-in-link">Sign in</a></p>
+
+            <!-- Social Login (Optional) -->
+            <div class="social-login">
+                <button onclick="window.location.href='oauth_login.php?provider=google'" class="b">Login with Google</button>
+                <button onclick="window.location.href='oauth_login.php?provider=github'" class="b">Login with GitHub</button>
+                <button onclick="window.location.href='oauth_login.php?provider=linkedin'" class="b">Login with LinkedIn</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <p>Srija's Code Editor</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a> |
+                <a href="#about">About</a> |
+                <a href="#" id="create-account-link-footer">Create Account</a> |
+                <a href="help.html">Help</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://x.com/SrijaMazumder04"><i class='bx bxl-twitter'></i></a>
+                <a href="https://github.com/Srija-Mazumder"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/srija-mazumder-67ba9b224/"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Srija's Code Editor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/fb31a7b69e.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
